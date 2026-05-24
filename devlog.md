@@ -61,3 +61,17 @@ land here as queue items get deleted.
 - Wrote `FINDINGS.md` (reproduced-vs-reported table, the not-reproduced
   catalogue with blockers, reproduce-it-yourself steps). Updated `README.md`
   status and taught `pages.yml` to copy result PNGs into the published site.
+
+## 2026-05-24 — Published: Pages live, both workflows green (queue 11)
+
+- Enabled GitHub Pages (Source: GitHub Actions) via the API. **Site live:**
+  <https://emmaleonhart.github.io/replicating-neural-computers/> (HTTP 200;
+  renders `FINDINGS.md` with the comparison images).
+- Fixed the PDF step: it was hitting its skip fallback (no PDF engine), so
+  `pages.yml` now installs weasyprint and renders `report.pdf` (serves HTTP 200,
+  application/pdf) — handles the report's unicode and local result images.
+- `package` workflow (downloadable ZIP) triggered and builds green.
+- **Definition of done met:** FINDINGS reports a reproduced headline number,
+  `scripts/run.py` runs end-to-end (downloads the public VAE), repo is public,
+  and Pages + ZIP build green. **Replication complete.** Remaining queue items
+  are optional polish (release tag, PSNR tightening, action version bumps).
