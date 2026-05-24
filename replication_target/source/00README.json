@@ -1,0 +1,161 @@
+{
+   "sources" : [
+      {
+         "usage" : "toplevel",
+         "filename" : "NC.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/Optimistic.ttf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_clean_1.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_clean_2.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_clean_3.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_clean_4.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_general_1.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_general_2.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_general_3.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_math_comp1.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_math_comp2.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_math_comp3.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_math_rep1.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_math_rep2.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/cligen_math_rep3.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_1.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_10.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_11.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_12.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_13.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_14.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_2.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_3.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_4.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_5.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_6.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_7.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_8.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/guiworld_sample_9.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/optimistic.tfm"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/plainnat.bst"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/sample1_cligen.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/sample2_cligen.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/sample3_cligen.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/sample4_cligen.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/sample5_cligen.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "assets/sample6_cligen.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "paper.bib"
+      }
+   ],
+   "spec_version" : 1,
+   "texlive_version" : "2025",
+   "process" : {
+      "compiler" : "pdflatex"
+   }
+}

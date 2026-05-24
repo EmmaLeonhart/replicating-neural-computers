@@ -1,0 +1,10 @@
+We build on the Wan2.1 model~\citep{wan2025wan}, which was a state-of-the-art video generation model at the time of our experiments.
+We add NC-specific conditioning and action modules, together with interface-specific training recipes.
+Figure~\ref{fig:nc-general} illustrates this setup: NCs take a prompt or action stream as input and generate future interface frames in both CLI and GUI settings. In the present prototypes, these prompts and actions are logged conditioning streams, so evaluation remains open-loop rather than closed-loop interaction with a live environment.
+We refer to these two instantiations as CLIGen, our command-line interface (CLI) prototype (\Cref{section:impl-cligen}), and GUIWorld, our graphical user interface (GUI) prototype (\Cref{section:impl-guiworld}).
+
+In this video-based instantiation, the NC latent runtime state $h_t$ is realized by the model’s time-indexed video latents $z_t$.
+Under this abstraction, the diffusion transformer acts as the state-update map: it consumes prior latents together with the current observation and conditioning inputs, and produces the updated state $h_t$ (realized as $z_t$).
+The decoder $G_\theta$ parameterizes a distribution over the next frame $x_{t+1}$.
+Auxiliary heads encode and decode conditioning streams $u_t$, including text prompts and action traces.
+Structured logs such as terminal buffers are used for alignment and evaluation where available, not as privileged model-state inputs.

@@ -1,0 +1,240 @@
+\documentclass[]{fairmeta}
+
+\input{assets/paperstyle}
+
+\usepackage{caption}
+
+\usepackage{xcolor}
+\definecolor{mcwarm}{RGB}{150, 90, 60}
+\definecolor{metaaffblue}{HTML}{1877F2}
+\definecolor{kaustrose}{HTML}{C97A8D}
+\definecolor{metaaffblueedge}{HTML}{0E63CB}
+\definecolor{metaaffbluelight}{HTML}{8BD0FF}
+\definecolor{kaustroseedge}{HTML}{A55F6F}
+\definecolor{kaustroselight}{HTML}{F0B9C5}
+\definecolor{emeralddark}{HTML}{007A5E}
+\definecolor{emeraldmid}{HTML}{00A878}
+\definecolor{emeraldlight}{HTML}{7EF7C7}
+\definecolor{emeraldedge}{HTML}{006B53}
+\captionsetup{
+  justification=raggedright,
+  singlelinecheck=true
+}
+\usepackage{amssymb}
+
+\newcommand{\wenyi}[1]{\textcolor{emeraldmid}{[Wenyi: #1]}}
+\newcommand{\hz}[1]{\textcolor{red}{#1}}
+\providecommand{\blackstar}{\ensuremath{\bigstar}}
+\providecommand{\blacklozenge}{\ensuremath{\lozenge}}
+\providecommand{\spadesuit}{\textbf{+}}
+
+\newcommand{\drawgradientbadge}[5]{%
+  \tikz[baseline=-0.60ex, x=#5ex, y=#5ex]{
+    \shade[
+      shading=axis,
+      shading angle=72,
+      left color=#2,
+      middle color=#3,
+      right color=#4,
+      draw=#2,
+      line width=0.045
+    ] (0,0) circle[radius=0.66];
+    \fill[white, opacity=0.26] (-0.21,0.23) circle[radius=0.18];
+    \fill[white, opacity=0.08] (0.14,-0.16) circle[radius=0.34];
+    \node[text=white, font=\sffamily\bfseries, inner sep=0pt, scale=0.64] at (0,-0.015) {#1};
+  }%
+}
+\DeclareRobustCommand{\MetaAffMark}{%
+  \ifmmode
+    \mathchoice
+      {\drawgradientbadge{1}{metaaffblueedge}{metaaffblue}{metaaffbluelight}{0.95}}
+      {\drawgradientbadge{1}{metaaffblueedge}{metaaffblue}{metaaffbluelight}{0.84}}
+      {\drawgradientbadge{1}{metaaffblueedge}{metaaffblue}{metaaffbluelight}{0.75}}
+      {\drawgradientbadge{1}{metaaffblueedge}{metaaffblue}{metaaffbluelight}{0.68}}%
+  \else
+    \drawgradientbadge{1}{metaaffblueedge}{metaaffblue}{metaaffbluelight}{0.95}%
+  \fi
+}
+\DeclareRobustCommand{\KaustAffMark}{%
+  \ifmmode
+    \mathchoice
+      {\drawgradientbadge{2}{kaustroseedge}{kaustrose}{kaustroselight}{0.95}}
+      {\drawgradientbadge{2}{kaustroseedge}{kaustrose}{kaustroselight}{0.84}}
+      {\drawgradientbadge{2}{kaustroseedge}{kaustrose}{kaustroselight}{0.75}}
+      {\drawgradientbadge{2}{kaustroseedge}{kaustrose}{kaustroselight}{0.68}}%
+  \else
+    \drawgradientbadge{2}{kaustroseedge}{kaustrose}{kaustroselight}{0.95}%
+  \fi
+}
+\newcommand{\drawemeraldplus}[1]{%
+  \tikz[baseline=-0.58ex, x=#1ex, y=#1ex]{
+    \shade[
+      shading=axis,
+      shading angle=18,
+      left color=emeraldedge,
+      middle color=emeraldmid,
+      right color=emeraldlight,
+      rounded corners=0.11,
+      draw=emeraldedge,
+      line width=0.03
+    ] (-0.56,-0.12) rectangle (0.56,0.12);
+    \shade[
+      shading=axis,
+      shading angle=108,
+      left color=emeraldedge,
+      middle color=emeraldmid,
+      right color=emeraldlight,
+      rounded corners=0.11,
+      draw=emeraldedge,
+      line width=0.03
+    ] (-0.12,-0.56) rectangle (0.12,0.56);
+  }%
+}
+\DeclareRobustCommand{\CoreContribMark}{%
+  \ifmmode
+    \mathchoice{\drawemeraldplus{0.82}}{\drawemeraldplus{0.72}}{\drawemeraldplus{0.62}}{\drawemeraldplus{0.56}}%
+  \else
+    \drawemeraldplus{0.82}%
+  \fi
+}
+
+\newcommand{\cligenGeneralLogo}{\raisebox{-0.18em}{\includegraphics[height=1.0em]{assets/CLIGen_general.png}}}
+\newcommand{\cligenCleanLogo}{\raisebox{-0.18em}{\includegraphics[height=1.0em]{assets/CLIGEN_clean.png}}}
+\newcommand{\guiworldLogo}{\raisebox{-0.12em}{\includegraphics[height=1.0em]{assets/GUIWorld.png}}}
+\newcommand{\cligenGeneralData}{\cligenGeneralLogo{}\,CLIGen (General)}
+\newcommand{\cligenCleanData}{\cligenCleanLogo{}\,CLIGen (Clean)}
+\newcommand{\guiworldName}{\guiworldLogo{}\,\ncguiworld{}}
+
+\title{Neural Computers}
+
+\author[\MetaAffMark,\KaustAffMark\CoreContribMark]{Mingchen Zhuge}
+\author[\MetaAffMark\CoreContribMark]{Changsheng Zhao}
+\author[\MetaAffMark,\KaustAffMark\CoreContribMark]{Haozhe Liu}
+\author[\MetaAffMark\CoreContribMark]{Zijian Zhou}
+\author[\MetaAffMark,\KaustAffMark\CoreContribMark]{Shuming Liu}
+\author[\KaustAffMark]{Wenyi Wang}
+\author[\MetaAffMark]{Ernie Chang}
+\author[\MetaAffMark]{Gael Le Lan}
+\author[\MetaAffMark,\KaustAffMark]{Junjie Fei}
+\author[\MetaAffMark,\KaustAffMark]{Wenxuan Zhang}
+\author[\KaustAffMark]{Yasheng Sun}
+\author[\MetaAffMark]{Zhipeng Cai}
+\author[\MetaAffMark]{Zechun Liu}
+\author[\MetaAffMark]{Yunyang Xiong}
+\author[\MetaAffMark]{Yining Yang}
+\author[\MetaAffMark]{Yuandong Tian}
+\author[\MetaAffMark]{Yangyang Shi}
+\author[\MetaAffMark]{Vikas Chandra}
+\author[\KaustAffMark]{Jürgen Schmidhuber}
+\affiliation[\MetaAffMark]{Meta AI}
+\affiliation[\KaustAffMark]{KAUST}
+\contribution[\CoreContribMark]{Core Contributors}
+
+\abstract{\input{section/abstract_js}}
+
+\date{\today}
+\correspondence{\email{mczhuge@gmail.com, cszhao@meta.com}}
+
+\metadata[Blogpost]{\url{https://metauto.ai/neuralcomputer}}
+
+\begin{document}
+
+\maketitle
+
+\vspace{0.15em}
+{\captionsetup{skip=2pt,font=footnotesize}}
+\begin{figure}[H]
+  \centering
+  \hypertarget{teaser}{}
+  \includegraphics[width=0.92\linewidth]{assets/teaser10.pdf}
+\end{figure}\label{fig:nc_teaser}
+\vspace{-1.2em}
+\begingroup
+\setcounter{tocdepth}{1}
+\vspace{-0.7em}
+\small\normalfont
+\renewcommand{\baselinestretch}{0.8}\selectfont
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\vspace{-0.7em}
+\tableofcontents
+\endgroup
+
+\newpage
+\section{Introduction}
+\label{section:intro}
+\input{section/intro}
+
+\section{Preliminaries}
+\label{section:prelim}
+\input{section/preliminaries}
+
+\section{Implementation of Neural Computers}
+\label{section:implementation}
+
+\begin{figure}[t]
+  \centering
+  \makebox[\linewidth][c]{\includegraphics[width=1\linewidth]{assets/data_teaser9.pdf}}
+  \caption{\textbf{Data types used to learn NC behaviors.} Logos denote datasets: \cligenGeneralLogo{}\,CLIGen (General) replays public \texttt{asciinema} traces spanning diverse real-world terminal workflows. \cligenCleanLogo{}\,CLIGen (Clean) uses scripted \texttt{vhs} runs to capture deterministic terminal traces for controlled experiments. \guiworldLogo{}\,GUIWorld captures desktop RGB with synchronized mouse/keyboard traces to validate action-conditioned rendering and control on GUIs.}
+  \label{fig:data-teaser}
+\end{figure}
+
+\input{section/model}
+
+\subsection{\cligenGeneralLogo{}\,/\,\cligenCleanLogo{}\,\,The CLI Video Generators}
+\label{section:impl-cligen}
+\input{section/impl_cli}
+
+\par\justifying
+
+\newpage
+\subsection{\guiworldLogo{}\,The GUI World Models}
+\label{section:impl-guiworld}
+\input{section/impl_gui}
+
+\section{Position: Toward Completely Neural Computers}
+\label{section:toward-cnc}
+\input{section/toward_cnc}
+
+\section{Conclusion}
+\label{section:conclusion}
+\input{section/conclusion}
+
+\clearpage
+\newpage
+\bibliographystyle{assets/plainnat}
+\bibliography{paper}
+
+\clearpage
+\newpage
+\beginappendix
+
+\phantomsection
+\addcontentsline{toc}{section}{Appendix}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\section{Explorations: Alternative Data Sources and Online Interaction}
+\label{appendix:explorations}
+\input{section/appendix_explorations}
+
+\newpage
+\section{Datasets: Collection and Evaluation Protocols}
+\label{appendix:pipeline}
+\input{section/appendix_pipeline}
+
+\newpage
+\section{CLIGen: CLI Trajectory Formats}
+\label{appendix:cligen-samples}
+\input{section/appendix_cligen}
+
+\newpage
+\section{GUIWorld: Action Representation, Temporal Alignment, and Conditioning}
+\label{appendix:gui-actions}
+\input{section/appendix_gui}
+
+\newpage
+\section{Additional Visualizations}
+\label{appendix:vis}
+\input{section/appendix_vis}
+
+\end{document}
