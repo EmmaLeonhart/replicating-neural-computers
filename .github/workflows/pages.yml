@@ -36,6 +36,10 @@ jobs:
           # Findings page (falls back to README if FINDINGS.md not written yet)
           SRC=FINDINGS.md
           [ -f "$SRC" ] || SRC=README.md
+          # Copy committed result images so relative links in FINDINGS.md render.
+          if ls results/*.png >/dev/null 2>&1; then
+            mkdir -p site/results && cp results/*.png site/results/
+          fi
           pandoc "$SRC" -s -o site/index.html --metadata title="Replication report"
           pandoc "$SRC" -o site/report.pdf || echo "PDF render skipped"
       - uses: actions/upload-pages-artifact@v3

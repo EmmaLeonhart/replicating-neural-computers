@@ -10,11 +10,21 @@ We propose a new frontier: Neural Computers (NCs) that unify computation, memory
 
 ## Replication status
 
-Not started. The agent-executable plan is in [`SKILL.md`](./SKILL.md);
-the concrete step queue is in [`queue.md`](./queue.md). The efficient path is
-**recipe-first**: get the LaTeX source, find and run the authors' reproduction
-recipe (often shipped right in the paper), then verify it against the paper and
-fill only the gaps.
+**Done, scope-limited.** See [`FINDINGS.md`](./FINDINGS.md) for the full report.
+
+No reproduction recipe, code, weights, or dataset ships with the paper, and full
+reproduction needs **>10⁵ H100 GPU-hours** — so it is marked **not CI-runnable**
+(`paper.json`). We reproduce the one headline number whose inputs are public: the
+**pretrained Wan2.1 VAE reconstructing terminal frames** (Experiment 1, Table
+`tab:cli-vae-recon`). Result: the paper's claim holds — SSIM matches its 0.989 at
+realistic terminal density, PSNR lands in its regime, and the "6px text blurs but
+global metrics stay high" nuance is reproduced. Run it with `python scripts/run.py`
+(~2 min on a consumer GPU). The remaining tables (trained-NC ablations, proprietary
+baselines) are catalogued as reported-but-not-reproduced in
+[`notes/claims.md`](./notes/claims.md).
+
+The agent-executable methodology is in [`SKILL.md`](./SKILL.md); recipe-search
+findings in [`notes/sources.md`](./notes/sources.md).
 
 ## What this repo produces
 

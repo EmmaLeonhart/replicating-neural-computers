@@ -1,0 +1,21 @@
+# Environment for the reproducible slice: Wan2.1 VAE terminal reconstruction
+# (Experiment 1 of arXiv:2604.06425). Pinned to the versions this ran on.
+#
+# torch is installed separately with the right CUDA wheel, e.g.:
+#   pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cu128
+# (CPU-only also works for the VAE; just slower.) Then:
+#   pip install -r requirements.txt
+#
+# Verified run: RTX 4070 Laptop (8 GB), CUDA 12.8, Python 3.13.3, < 2 min total.
+
+diffusers==0.38.0          # provides AutoencoderKLWan (the Wan2.1 VAE)
+accelerate==1.13.0
+safetensors==0.8.0rc0
+huggingface-hub==1.8.0
+scikit-image==0.26.0       # PSNR / SSIM
+numpy==2.2.5
+Pillow==11.3.0
+matplotlib==3.10.7         # only for its bundled DejaVuSansMono.ttf (portable font)
+
+# torch==2.10.0  (install with the CUDA index-url above; not pinned here so the
+#                 wheel can match the target machine's CUDA / CPU build)

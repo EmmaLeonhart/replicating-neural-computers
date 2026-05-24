@@ -93,3 +93,28 @@ gaps. Reimplementing from scratch is the fallback, not the default.
   build green in Actions.
 - This file still reflects how you actually did it — if you deviated, edit
   the plan above.
+
+## Notes from the actual run (2026-05-24)
+
+What this paper turned out to be, and what worked — so the skill compounds:
+
+- **No recipe shipped.** The e-print source was paper LaTeX only. Grepping for
+  `reproduc`/`replicat`/`github.com`/`huggingface`/zip/weights found nothing
+  runnable — only a blogpost URL and unlinked "released configs." Step 3's
+  "found nothing" branch is the common case for big-lab position papers; don't
+  over-hunt, record it in `notes/sources.md` and move on.
+- **Compute made full reproduction a non-starter** (>10⁵ H100 GPU-hours,
+  unreleased corpora + checkpoints, proprietary baselines). The budget guardrail
+  did its job: marked `ci_runnable: false` and pivoted to a slice.
+- **The winning move: find the ONE claim that uses only public, pretrained
+  components.** Here it was Experiment 1 — the off-the-shelf Wan2.1 VAE
+  reconstructing terminal frames (no NC training). Reproducing that single,
+  honest slice (SSIM matched, PSNR in-regime, the 6px nuance shown) beats
+  reimplementing nothing or faking the whole thing.
+- **When you must synthesize inputs (the dataset is unreleased), expose the
+  knob that drives the metric and sweep it** instead of cherry-picking. Terminal
+  reconstruction PSNR is dominated by content density (background dominates the
+  metric — the paper says so); sweeping density turned a "we missed 40.77" into
+  "we matched SSIM and bracketed PSNR, here's the dependency." Transparent > tuned.
+- **Ask consent once, up front, bundled.** One `AskUserQuestion` covered: run
+  third-party code? scope? go public? — then execute without re-prompting.

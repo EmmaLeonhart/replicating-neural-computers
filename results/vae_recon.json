@@ -1,0 +1,93 @@
+{
+  "experiment": "Wan2.1 VAE terminal-frame reconstruction (Exp. 1)",
+  "paper": "arXiv:2604.06425, Table tab:cli-vae-recon",
+  "model": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+  "device": "cuda",
+  "dtype": "torch.float32",
+  "config": {
+    "font_sizes": [
+      13,
+      6
+    ],
+    "densities": [
+      1.0,
+      0.5,
+      0.25
+    ],
+    "num_samples": 8,
+    "frames": 5,
+    "width": 832,
+    "height": 480
+  },
+  "paper_reference": {
+    "13": {
+      "psnr": 40.77,
+      "ssim": 0.989
+    }
+  },
+  "sweep": [
+    {
+      "font_px": 13,
+      "density": 1.0,
+      "n_frames": 40,
+      "psnr_mean": 31.01769985983218,
+      "psnr_std": 1.1122488393781178,
+      "ssim_mean": 0.9760869964957237,
+      "ssim_std": 0.0034588390956930026,
+      "seconds": 47.9
+    },
+    {
+      "font_px": 13,
+      "density": 0.5,
+      "n_frames": 40,
+      "psnr_mean": 34.199201223294224,
+      "psnr_std": 1.3200499963150605,
+      "ssim_mean": 0.987388876080513,
+      "ssim_std": 0.00229064986126658,
+      "seconds": 47.5
+    },
+    {
+      "font_px": 13,
+      "density": 0.25,
+      "n_frames": 40,
+      "psnr_mean": 37.204396403295355,
+      "psnr_std": 1.4532678350819466,
+      "ssim_mean": 0.993515607714653,
+      "ssim_std": 0.0017581802213365034,
+      "seconds": 47.5
+    },
+    {
+      "font_px": 6,
+      "density": 1.0,
+      "n_frames": 40,
+      "psnr_mean": 31.46194321123621,
+      "psnr_std": 0.9838141644475579,
+      "ssim_mean": 0.9826234012842179,
+      "ssim_std": 0.0034005638664848185,
+      "seconds": 47.6
+    },
+    {
+      "font_px": 6,
+      "density": 0.5,
+      "n_frames": 40,
+      "psnr_mean": 32.409159781551566,
+      "psnr_std": 1.012002748839551,
+      "ssim_mean": 0.9855449706315994,
+      "ssim_std": 0.0027968450092382825,
+      "seconds": 47.1
+    },
+    {
+      "font_px": 6,
+      "density": 0.25,
+      "n_frames": 40,
+      "psnr_mean": 35.57351151178907,
+      "psnr_std": 1.2701700496325306,
+      "ssim_mean": 0.9922194451093673,
+      "ssim_std": 0.0015392868422986223,
+      "seconds": 48.0
+    }
+  ],
+  "torch": "2.10.0+cu128",
+  "cuda_device": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "timestamp": "2026-05-24T22:54:31.491383+00:00"
+}
