@@ -108,13 +108,14 @@ What this paper turned out to be, and what worked — so the skill compounds:
   did its job: marked `ci_runnable: false` and pivoted to a slice.
 - **The winning move: find the ONE claim that uses only public, pretrained
   components.** Here it was Experiment 1 — the off-the-shelf Wan2.1 VAE
-  reconstructing terminal frames (no NC training). Reproducing that single,
-  honest slice (SSIM matched, PSNR in-regime, the 6px nuance shown) beats
-  reimplementing nothing or faking the whole thing.
+  reconstructing terminal frames (no NC training). Reproducing that one
+  defensible slice (SSIM matched, PSNR in-regime, the 6px nuance shown) beats
+  reimplementing nothing or fabricating the whole thing.
 - **When you must synthesize inputs (the dataset is unreleased), expose the
   knob that drives the metric and sweep it** instead of cherry-picking. Terminal
   reconstruction PSNR is dominated by content density (background dominates the
   metric — the paper says so); sweeping density turned a "we missed 40.77" into
-  "we matched SSIM and bracketed PSNR, here's the dependency." Transparent > tuned.
+  "we matched SSIM and bracketed PSNR, here's the dependency." Report the
+  dependency; don't tune to the number.
 - **Ask consent once, up front, bundled.** One `AskUserQuestion` covered: run
   third-party code? scope? go public? — then execute without re-prompting.

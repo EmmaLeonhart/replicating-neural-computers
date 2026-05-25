@@ -118,7 +118,7 @@ python scripts/run.py --device cpu --num-samples 2 --frames 1 --densities 0.25
 First run downloads the public Wan2.1 VAE (~hundreds of MB) from HuggingFace.
 Outputs: `results/vae_recon.json` plus `results/compare_{13,6}px.png`.
 
-## Honest scope statement
+## Scope and limits
 
 This replication reproduces **one** of the paper's results — the only one whose
 inputs (a public pretrained VAE) are available — and documents the rest as
