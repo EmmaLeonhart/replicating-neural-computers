@@ -26,6 +26,7 @@ files). Searched the full `.tex` tree for: `reproduc`, `replicat`, `github.com`,
   These are generic terminal-recording tools the data pipeline used, not a
   reproduction package.
 - **No authors' code repo, no model weights, no dataset release, no zip.**
+  *(See dated update below — a data-engine repo has since appeared.)*
 
 ## Backbone & datasets (for the record)
 
@@ -48,3 +49,20 @@ and proprietary baselines (Sora2, Veo3.1). Per the `SKILL.md` budget guardrail
 only public, pretrained components: the **Wan2.1 VAE terminal-reconstruction**
 test (Experiment 1, Table `tab:cli-vae-recon`). Everything else is documented as
 reported-but-not-reproduced in `FINDINGS.md`.
+
+## Update 2026-05-28 — a data-engine repo now exists (still no model)
+
+Re-checking the authors' artifacts surfaced a GitHub repo that the original
+2026-05-24 search did not record (either published after that date or missed):
+
+- **`github.com/metauto-ai/NeuralComputer`** — "First open-source release of
+  Neural Computers, starting with the **data pipeline** for CLI and GUI
+  trajectory generation." Directories: `engine/` (CLI + GUI data generators),
+  `assets/` (demo GIFs).
+
+This is **data-collection tooling only**. It does **not** change any conclusion
+above: there is still **no inference code, no trained NCCLIGen/NCGUIWorld
+checkpoint, no released corpus**, and no HuggingFace model. The repo's own README
+states the models are "not released here" and are built from Wan2.1 +
+Matrix-Game-2. The only runnable artifact from public weights remains the
+Wan2.1-VAE terminal-reconstruction slice (Experiment 1) we reproduced.

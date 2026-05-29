@@ -75,3 +75,24 @@ land here as queue items get deleted.
   `scripts/run.py` runs end-to-end (downloads the public VAE), repo is public,
   and Pages + ZIP build green. **Replication complete.** Remaining queue items
   are optional polish (release tag, PSNR tightening, action version bumps).
+
+## 2026-05-28 — Windowed launcher for the runnable demo; sources note updated
+
+- User wanted a double-click, windowed way to run "the paper's programmes."
+  Reality check first: the trained NCs (NCCLIGen / NCGUIWorld) were never
+  released, so only the public-weights slice (Experiment 1, Wan2.1 VAE recon)
+  can run. Built a launcher around exactly that, nothing it can't deliver:
+  - `scripts/gui.py` — Tkinter front-end over `scripts/run.py` (device / clips /
+    frames / font-sizes / densities; live output; view compare PNGs). No new
+    deps (Tkinter ships with Python). Drives the verified entry point as a
+    subprocess so it can't drift from the reproduced result.
+  - `Run Neural Computers Demo.bat` — repo-root launcher; honours `NC_PYTHON`
+    for picking a package-complete interpreter.
+- **Verified:** `py_compile` clean; tkinter 8.6 + torch 2.10.0+cu128 present;
+  GUI window opens and closes cleanly; CPU smoke run (`--device cpu
+  --num-samples 2 --frames 1 --densities 0.25`) completed and wrote
+  `results/vae_recon.json` (13px 35.10 dB / 0.991, 6px 33.56 dB / 0.989).
+- Fixed a stale note: `notes/sources.md` recorded "no authors' code repo," but
+  `github.com/metauto-ai/NeuralComputer` (a **data-engine** repo — trajectory
+  generation only, still no weights/inference) now exists. Added a dated update;
+  conclusions unchanged.
