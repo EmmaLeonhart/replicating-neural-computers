@@ -10,18 +10,25 @@ We propose a new frontier: Neural Computers (NCs) that unify computation, memory
 
 ## Replication status
 
-**Done, scope-limited.** See [`FINDINGS.md`](./FINDINGS.md) for the full report.
+**Not reproduced.** This paper's results were not reproduced. That is a statement
+about missing artifacts and compute — **not** a claim that the method does or does
+not work. No code, weights, dataset, or recipe ships with the paper; the trained
+Neural Computers (CLIGen/GUIWorld) and their corpora were never released; the
+arithmetic baselines (Sora 2, Veo 3.1) are proprietary; and full training needs
+**>10⁵ H100 GPU-hours** (marked **not CI-runnable** in `paper.json`). Nothing
+released lets you run a neural computer.
 
-No reproduction recipe, code, weights, or dataset ships with the paper, and full
-reproduction needs **>10⁵ H100 GPU-hours** — so it is marked **not CI-runnable**
-(`paper.json`). We reproduce the one headline number whose inputs are public: the
-**pretrained Wan2.1 VAE reconstructing terminal frames** (Experiment 1, Table
-`tab:cli-vae-recon`). Result: the paper's claim holds — SSIM matches its 0.989 at
+**One ancillary experiment was reproduced — and only that:** Experiment 1 (Table
+`tab:cli-vae-recon`), the *public, pretrained* Wan2.1 VAE reconstructing terminal
+frames, which the paper uses to motivate its setup. It is **not** the paper's
+contribution. For that experiment our numbers line up: SSIM matches its 0.989 at
 realistic terminal density, PSNR lands in its regime, and the "6px text blurs but
-global metrics stay high" nuance is reproduced. Run it with `python scripts/run.py`
-(~2 min on a consumer GPU). The remaining tables (trained-NC ablations, proprietary
-baselines) are catalogued as reported-but-not-reproduced in
+global metrics stay high" nuance reproduces. Run it with `python scripts/run.py`
+(~2 min on a consumer GPU). Everything else — the trained-NC ablations and
+proprietary baselines — is catalogued as reported-but-not-reproduced in
 [`notes/claims.md`](./notes/claims.md).
+
+See [`FINDINGS.md`](./FINDINGS.md) for the full report.
 
 The agent-executable methodology is in [`SKILL.md`](./SKILL.md); recipe-search
 findings in [`notes/sources.md`](./notes/sources.md).

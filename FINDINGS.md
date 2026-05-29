@@ -13,16 +13,24 @@ models that act as a learned computer runtime — and ships two prototypes built
 diagnostic ablations on the authors' **unreleased** corpora and **unreleased**
 trained checkpoints.
 
-- **Full reproduction is impossible from what ships.** No code, no weights, no
+**Verdict: this paper is not reproduced.** That is a statement about missing
+artifacts and compute — **not** a claim that the method does or does not work.
+The trained Neural Computers and their data were never released, so the paper's
+actual contribution could not be attempted, only catalogued.
+
+- **Full reproduction is not possible from what ships.** No code, no weights, no
   dataset release, no recipe — and training costs **>10⁵ H100 GPU-hours**.
-  Marked `ci_runnable: false` in `paper.json`.
-- **One headline number needs only public, pretrained parts — and we reproduce
-  it:** Experiment 1 (Table `tab:cli-vae-recon`), the **off-the-shelf Wan2.1 VAE**
-  reconstructing terminal frames.
-- **Result: the paper's claim holds.** We match its **SSIM** (0.989) at realistic
-  terminal density, land in its **PSNR** regime, and reproduce its specific
-  **6px nuance** ("text blurs but global PSNR/SSIM stay high because background
-  dominates"). See the [side-by-side images](#the-6px-nuance-reproduced).
+  Marked `ci_runnable: false` in `paper.json`. Nothing released runs a neural
+  computer.
+- **One *ancillary* experiment uses only public, pretrained parts, and that one
+  we reproduced:** Experiment 1 (Table `tab:cli-vae-recon`), the **off-the-shelf
+  Wan2.1 VAE** reconstructing terminal frames — a control the paper uses to
+  motivate its setup, not its contribution.
+- **For that experiment, our numbers line up.** We match its **SSIM** (0.989) at
+  realistic terminal density, land in its **PSNR** regime, and reproduce its
+  specific **6px nuance** ("text blurs but global PSNR/SSIM stay high because
+  background dominates"). See the [side-by-side images](#the-6px-nuance-reproduced).
+  This supports Exp 1's narrow claim; it says nothing about the NC prototypes.
 
 ## What we reproduced — Experiment 1: Wan2.1 VAE on terminals
 
